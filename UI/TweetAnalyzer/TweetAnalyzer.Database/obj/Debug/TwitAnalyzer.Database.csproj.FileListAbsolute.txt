@@ -1,0 +1,16 @@
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\TwitAnalyzer.Database.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\TwitAnalyzer.Database.pdb
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\SQLite.Designer.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\System.Data.SQLite.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\EnvDTE.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\bin\Debug\stdole.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\obj\Debug\TwitAnalyzer.Database.csproj.CoreCompileInputs.cache
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\obj\Debug\TwitAnalyzer.Database.csproj.CopyComplete
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\obj\Debug\TwitAnalyzer.Database.dll
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\obj\Debug\TwitAnalyzer.Database.pdb
+D:\Projects\TwitAnalyzer\WebSite\TwitAnalyzer\TwitAnalyzer.Database\obj\Debug\TwitAnalyzer.Database.csprojAssemblyReference.cache
