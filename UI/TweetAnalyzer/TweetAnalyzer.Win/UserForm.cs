@@ -26,6 +26,7 @@ namespace TweetAnalyzer.Win
         public UserForm(decimal UserId, ShowMode showMode = ShowMode.Edit)
         {
             InitializeComponent();
+            LoadComboBox();
             SetUIFromUserId(UserId);
             this.showMode = showMode;
         }
@@ -33,6 +34,7 @@ namespace TweetAnalyzer.Win
         public UserForm(IUser user, ShowMode showMode = ShowMode.Add)
         {
             InitializeComponent();
+            LoadComboBox();
             SetUIFromUser(user);
             this.showMode = showMode;
         }
@@ -89,6 +91,7 @@ namespace TweetAnalyzer.Win
             WebSiteTextBox.Text = values["Url"].ToString();
             ProtectedCheckBox.Checked = values["Protected"].ToString() == "1";
             ProfileImagePictureBox.ImageLocation = values["ProfileImageUrl400x400"].ToString();
+            SetComboBoxSelected(UserCategoryComboBox, values["UserCategoryId"]);
 
         }
 
@@ -106,6 +109,7 @@ namespace TweetAnalyzer.Win
             columns["Url"] = WebSiteTextBox.Text;
             columns["Protected"] = ProtectedCheckBox.Checked;
             columns["ProfileImageUrl400x400"] = ProfileImagePictureBox.ImageLocation;
+            columns["UserCategoryId"] = GetComboBoxSelected<long>(UserCategoryComboBox);
 
             Dac dac = new Dac();
             MethodResult result = new MethodResult();
@@ -138,7 +142,7 @@ namespace TweetAnalyzer.Win
 
         private void UserForm_Load(object sender, EventArgs e)
         {
-            if(this.showMode == ShowMode.View)
+            if (this.showMode == ShowMode.View)
             {
                 this.OkeyButton.Enabled = false;
             }
@@ -147,11 +151,44 @@ namespace TweetAnalyzer.Win
             {
                 this.OkeyButton.Text = "Delete";
             }
+        }
 
+        private void LoadComboBox()
+        {
             DataTable dataTable = new Dac().ExecuteDataTable("SELECT Id, Name FROM UserCategory ORDER BY Name").Result;
             UserCategoryComboBox.DataSource = dataTable;
             UserCategoryComboBox.DisplayMember = "Name";
             UserCategoryComboBox.ValueMember = "Id";
+        }
+
+        private void SetComboBoxSelected(ComboBox comboBox,  object value)
+        {
+            if (comboBox == null)
+                return;
+
+            if (comboBox.DataSource == null || !(comboBox.DataSource is DataTable))
+                return;
+
+            foreach(object item in comboBox.Items)
+            {
+                if (((DataRowView)item)[comboBox.ValueMember].ToString() == value.ToString())
+                    comboBox.SelectedItem = item;
+            }
+
+        }
+
+        private T GetComboBoxSelected<T>(ComboBox comboBox)
+        {
+            if (comboBox == null)
+                return default(T);
+
+            if (comboBox.DataSource == null || !(comboBox.DataSource is DataTable))
+                return default(T);
+
+            if (comboBox.SelectedItem == null)
+                return default(T);
+
+            return (T)((DataRowView)comboBox.SelectedItem)[comboBox.ValueMember];
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
